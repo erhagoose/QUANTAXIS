@@ -1253,10 +1253,10 @@ def QA_fetch_get_stock_transaction_realtime(code, ip=None, port=None):
 @retry(stop_max_attempt_number=3, wait_random_min=50, wait_random_max=100)
 def QA_fetch_get_stock_xdxr(code, ip=None, port=None):
     '除权除息'
-    ip, port = get_mainmarket_ip(ip, port)
+    # ip, port = get_mainmarket_ip(ip, port)
     api = TdxHq_API()
     market_code = _select_market_code(code)
-    with api.connect(ip, port):
+    with api.connect():
         category = {
             '1': '除权除息', '2': '送配股上市', '3': '非流通股上市', '4': '未知股本变动',
             '5': '股本变化',

@@ -46,16 +46,6 @@ with io.open('QUANTAXIS/__init__.py', 'rt', encoding='utf8') as f:
     VERSION = re.search(r'__version__ = \'(.*?)\'', context).group(1)
     AUTHOR = re.search(r'__author__ = \'(.*?)\'', context).group(1)
 
-
-try:
-    if sys.platform in ['win32', 'darwin']:
-        print(webbrowser.open(
-            'https://github.com/QUANTAXIS/QUANTAXIS/releases'))
-        print('finish install')
-except:
-    pass
-
-
 def read(fname):
 
     return codecs.open(os.path.join(os.path.dirname(__file__), fname)).read()
